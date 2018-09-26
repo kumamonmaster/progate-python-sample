@@ -1,19 +1,17 @@
 class MenuItem:
     def info(self):
-        # print()の中身を戻り値として返してください
         return self.name + ': ¥' + str(self.price)
 
+    def get_total_price(self, count):
+        total_price = self.price * count
+        return total_price
 
 menu_item1 = MenuItem()
 menu_item1.name = 'サンドイッチ'
 menu_item1.price = 500
 
-# menu_item1.info()の値を出力してください
 print(menu_item1.info())
 
-menu_item2 = MenuItem()
-menu_item2.name = 'チョコケーキ'
-menu_item2.price = 400
+result = menu_item1.get_total_price(4)
 
-# menu_item2.info()の値を出力してください
-print(menu_item2.info())
+print('合計は' + str(result) + '円です')
