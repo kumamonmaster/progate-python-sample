@@ -1,4 +1,5 @@
 import utils
+import random
 
 print('じゃんけんをはじめます')
 player_name = input('名前を入力してください：')
@@ -6,7 +7,7 @@ print('何を出しますか？（0: グー, 1: チョキ, 2: パー）')
 player_hand = int(input('数字で入力してください：'))
 
 if utils.validate(player_hand):
-    computer_hand = 1
+    computer_hand = random.randint(0, 2)
 
     if player_name == '':
         utils.print_hand(player_hand)
